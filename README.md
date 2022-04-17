@@ -1,1 +1,1 @@
-# pywor is the very beggining of working with Python
+# pywork is the very beggining of working with Python
