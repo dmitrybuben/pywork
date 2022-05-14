@@ -13,9 +13,9 @@ def filtered_string(st1, st2):
 
     for e in coll:
         if st2 not in e:
-            str_res += e + ' '
+            str_res += ' ' + e
     return(str_res)
 
 str1 = 'ываабв лповап абвцукв алоабвабв ываываыв'
 str2 = 'абв'
-print(f'Выходные данные: {filtered_string(str1,str2)}')
+print(f'Выходные данные:{filtered_string(str1,str2)}')
