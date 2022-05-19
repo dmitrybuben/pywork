@@ -1,25 +1,19 @@
 # 7. Проверить истинность утверждения ¬(X ⋁ Y ⋁ Z) = ¬X ⋀ ¬Y ⋀ ¬Z для всех значений предикат
 
-X=0 
-Y=0
-Z=0
-if(X==0, Y==0, Z==0):
-    i = (not(X or Y or Z) == (not X) and (not Y) and (not Z))
-if(X==0, Y==0, Z==1):
-    b = (not(X or Y or Z) == (not X) and (not Y) and (not Z))
-if(X==0, Y==1, Z==1):
-    c = (not(X or Y or Z) == (not X) and (not Y) and (not Z))
-if(X==1, Y==1, Z==1):
-    d = (not(X or Y or Z) == (not X) and (not Y) and (not Z))
-if(X==1, Y==0, Z==0):
-    e = (not(X or Y or Z) == (not X) and (not Y) and (not Z))
-if(X==1, Y==1, Z==0):
-    f = (not(X or Y or Z) == (not X) and (not Y) and (not Z))
-if(X==1, Y==0, Z==1):
-    g = (not(X or Y or Z) == (not X) and (not Y) and (not Z))
-if(X==0, Y==1, Z==0):
-    h = (not(X or Y or Z) == (not X) and (not Y) and (not Z))
-if(i and b and c and d and e and f and g and h) == True:
+def values(X,Y,Z):
+    b = (not(X or Y or Z) == (not X and not Y and not Z))
+    return b
+
+a1 = values(0,0,0)
+a2 = values(0,0,1)
+a3 = values(0,1,0)
+a4 = values(0,1,1)
+a5 = values(1,0,0)
+a6 = values(1,0,1)
+a7 = values(1,1,0)
+a8 = values(1,1,1)
+
+if(a1 and a2 and a3 and a4 and a5 and a6 and a7 and a8):
     print('Утверждение истинно')
 else:
     print('Утверждение ложно')
