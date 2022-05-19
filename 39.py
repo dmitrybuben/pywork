@@ -12,26 +12,28 @@ import random
 def game(cands,max_step,min_step,pls_list):
     turn = random.randint(0,1)
     while cands > 0:
-        step = int(input(f'{pls_list[turn]},возьмите конфеты, от {min_step} до {max_step}:'))
+        step = int(input(f'{pls_list[turn]},возьмите конфеты, от {min_step} до {max_step}:'))       # ход первого по жеребьевке
         if step >= min_step and step <= max_step and step <= cands:
             cands -= step
+            if cands == 0:
+                print('Конфеты закончились')
+                print(f'Победил {pls_list[turn]}')
         else:
             print('Не то количество - начинаем заново')
             break
-        if cands > 0:
+        if cands > 0:                                                                               # ход второго
             print(f'Осталось {cands} конфет')
             step = int(input(f'{(pls_list[not turn])},возьмите конфеты, от {min_step} до {max_step}:'))
             if step >= min_step and step <= max_step and step <= cands:
                 cands -= step
+                if cands == 0:
+                    print('Конфеты закончились')
+                    print(f'Победил {pls_list[not turn]}')
             else:
                 print('Не то количество - начинаем заново')
                 break
-        if cands > 0:
-            print(f'Осталось {cands} конфет')
-        else:
-            print('Конфеты закончились')
-            print(f'Победил {pls_list[turn]}')
-    # print(f'Победил_ {pls_list[not turn]}')
+            if cands > 0:
+                print(f'Осталось {cands} конфет')
     return
 
 
